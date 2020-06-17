@@ -7,8 +7,12 @@ var router = express.Router();
 var request= require('request');
 
 router.get('/', function(req, res, next) {
-    res.render('index')
+  request('https://apiperfumetecjol.herokuapp.com/apiPerfume',(err,response,body)=>{
+    console.log(body);
+    
+    res.render('index',{data:JSON.parse(body) });
   });
+});
 router.post('/web/interfaz/buscar',(req,res,next)=>{
     request('http://localhost:3000/apiPerfume',(err,resp,body)=>{
         
