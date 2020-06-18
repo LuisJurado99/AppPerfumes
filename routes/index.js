@@ -16,7 +16,8 @@ router.get('/compras/:id', (req, res, next) => {
     console.log(body);
     console.log(JSON.parse(body));
     
-    res.render('compras', { data: JSON.parse('['+body+']') });
+    res.render('compras', { nombre:JSON.parse(body)['nombre'], marca:JSON.parse(body)['marca'], 
+    foto:JSON.parse(body)['foto']});
   });
 });
 
