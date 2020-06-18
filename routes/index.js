@@ -16,10 +16,11 @@ router.get('/compras/:id', (req, res, next) => {
     console.log(body);
     console.log(JSON.parse(body));
     
-    res.render('compras', { nombre:JSON.parse(body)['nombre'], marca:JSON.parse(body)['marca'], 
+    res.render('compras', {id:JSON.parse(body)['_id'], nombre:JSON.parse(body)['nombre'], marca:JSON.parse(body)['marca'], 
     foto:JSON.parse(body)['foto'], title: 'Compra'});
   });
 });
+
 router.get('/exito/:id', (req, res, next) => {
   request('https://apiperfumetecjol.herokuapp.com/apiPerfume/'+req.params.id, (err, response, body) => {
     res.render('exito', { nombre:JSON.parse(body)['nombre'], title: 'Exito'});
