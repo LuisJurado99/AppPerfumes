@@ -25,7 +25,11 @@ router.get('/exito/:id', (req, res, next) => {
     res.render('exito', { nombre:JSON.parse(body)['nombre'], title: 'Exito'});
   });
 });
-
+router.post('/exito', (req, res, next) => {
+  request('https://apiperfumetecjol.herokuapp.com/apiPerfume/'+req.params.id, (err, response, body) => {
+    res.render('exito', { nombre:req.body.nombre, title: 'Exito'});
+  });
+});
 
 
 module.exports = router;
