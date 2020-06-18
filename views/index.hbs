@@ -1,18 +1,19 @@
 <div class="row">
     {{#each data}}
     <div class="col col-3 m-5">
-        <div class="card" style="width:400px;">
-            <div style="text-align: center;">
-                <img class="card-img-top" src="{{foto}}" alt="Card image" style="width: 350px; height: 400px;">
-                <div class="card-body">
-                    <h4 class="card-title"><a href="{{foto}}">{{nombre}} </a> </h4>
-                    <p class="card-text">{{marca}}</p>
-                    <p class="card-text">$ {{precio}}</p>
-                    <p class="card-text">{{tipo}}</p>
-                    <p class="card-text">{{cantidad}} ml </p>
-                    <a class="btn btn-primary" href="/modificar/{{_id}}" role="button">Modificar</a>
-                    <a class="btn btn-danger" href="/eliminar/{{_id}}"  role="button" > Eliminar </a>
-                                        
+        <div class="product">
+            <div class="product_image"><img src="{{foto}}" style="width: 350px; height: 400px;"></div>
+            <div class="product_content">
+                <div class="product_buttons">
+                        <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+                            <div align="center">
+
+                                <div><img src="images/cart.svg" class="svg">
+                                    <div>+</div>
+                                </div>
+                            </div>
+                        </div>
+                    
                 </div>
             </div>
         </div>
